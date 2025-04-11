@@ -3,3 +3,8 @@ docker run --detach  --publish 8888:8888 --publish 1025:22   --name gitlab  \
 --volume gitlab_data:/var/opt/gitlab   --shm-size 2gb   \
 --env GITLAB_OMNIBUS_CONFIG="external_url 'http://example.com:8888'; gitlab_rails['gitlab_shell_ssh_port'] = 1025" \
 gitlab/gitlab-ce:latest
+
+or
+
+docker run --detach  --publish 8888:8888 --publish 1025:22   --name gitlab   --restart always   --volume gitlab_config:/etc/gitlab   --volume gitlab_logs:/var/log/gitlab   --volume gitlab_data:/var/opt/gitlab   --shm-size 2gb   --env GITLAB_OMNIBUS_CONFIG="external_url 'http://prxav1116.bcbsm.com:8888'; gitlab_rails['gitlab_shell_ssh_port'] = 1025" gitlab/gitlab-ce:latest
+
