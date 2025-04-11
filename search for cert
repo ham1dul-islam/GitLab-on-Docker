@@ -1,0 +1,1 @@
+sudo grep -r --include="*.pem" --include="*.crt" --include="*.cer" --include="*.key" "BEGIN CERTIFICATE" /etc /usr/local/etc /opt
